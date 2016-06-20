@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloWorld
+ * Servlet implementation class MyAccount
  */
-@WebServlet("/HelloWorld")
-public class HelloWorld extends HttpServlet {
+@WebServlet("/MyAccount")
+public class MyAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloWorld() {
+    public MyAccount() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,8 +29,8 @@ public class HelloWorld extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+		PrintWriter writer = response.getWriter();
+		writer.println("MyAccount");
 	}
 
 	/**
@@ -38,12 +38,6 @@ public class HelloWorld extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
-		String username =request.getParameter("username");
-		String password =request.getParameter("password");
-		out.println(username+password);
-        request.getRequestDispatcher("/WEB-INF/hompage.jsp").forward(request, response);
-
 	}
 
 }
