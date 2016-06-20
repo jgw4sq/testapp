@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MySchedule
+ * Servlet implementation class ScheduledShifts
  */
-@WebServlet("/MySchedule")
-public class MySchedule extends HttpServlet {
+@WebServlet("/ScheduledShifts")
+public class ScheduledShifts extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MySchedule() {
+    public ScheduledShifts() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,9 +29,10 @@ public class MySchedule extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setAttribute("teststring", "teststring234");
 		PrintWriter writer = response.getWriter();
-		writer.println("MySchedule");
-        request.getRequestDispatcher("/WEB-INF/myschedule.jsp").forward(request, response);
+		writer.println("ScheduledShifts");
+        request.getRequestDispatcher("/WEB-INF/myshifts.jsp").forward(request, response);
 
 	}
 
