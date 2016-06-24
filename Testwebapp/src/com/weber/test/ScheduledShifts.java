@@ -2,6 +2,12 @@ package com.weber.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,12 +35,18 @@ public class ScheduledShifts extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setAttribute("teststring", "teststring234");
-		PrintWriter writer = response.getWriter();
-		writer.println("ScheduledShifts");
+		Statement stmt = null;
+		try{
+			
+		request.setAttribute("myshifts", Login.USER.getShifts());
         request.getRequestDispatcher("/WEB-INF/myshifts.jsp").forward(request, response);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 
 	}
+
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

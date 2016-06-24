@@ -36,7 +36,7 @@
     <body>
         <div id="login_form">
             <div class="new"><span>enter login details</span></div>  <!-- This is your header text-->
-            <form name="f1" method="post" action="HelloWorld" id="f1">
+            <form name="f1" method="post" action="Login" id="f1">
                 <table>
                     <tr>
                         <td class="f1_label">User Name :</td> <!-- This is your first Input Box Label-->
